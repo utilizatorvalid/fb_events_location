@@ -14,9 +14,10 @@ var app = express();
 // Use morgan for logging
 app.use(morgan("combined"));
 
+var port = process.env.PORT || 8080;
 // Set application properties
-app.set("host", process.env.HOST || "0.0.0.0");
-app.set("port", process.env.PORT0 || 8080);
+// app.set("host", process.env.HOST || "0.0.0.0");
+// app.set("port", process.env.PORT0 || 8080);
 // app.set("x-powered-by", false);
 // app.set("etag", false);
 
@@ -137,6 +138,6 @@ app.get("/health", function(req, res) {
 
 
 // Start Express.js server
-var server = app.listen(app.get("port"), app.get("host"), function() {
-    console.log("Express server listening on port " + server.address().port + " on " + server.address().address);
+var server = app.listen(port, ()=>{
+    console.log("Express server listening on port " ,port);
 });
