@@ -16,9 +16,9 @@ app.use(morgan("combined"));
 
 // Set application properties
 app.set("host", process.env.HOST || "0.0.0.0");
-app.set("port", process.env.PORT0 || 8002);
-app.set("x-powered-by", false);
-app.set("etag", false);
+app.set("port", process.env.PORT0 || 8080);
+// app.set("x-powered-by", false);
+// app.set("etag", false);
 
 // Instantiate CORS whitelist
 var whitelist = [],
@@ -58,6 +58,10 @@ var corsOptions = {
 
 var EventApi = require("./event-api");
 var eventApi = new EventApi();
+
+app.get('/',(req, res)=>{
+    res.json({"status":"alive"});
+})
 // Main route
 app.get("/events", cors(corsOptions), (req, res)=>{
 
