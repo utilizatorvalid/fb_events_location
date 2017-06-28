@@ -1,7 +1,7 @@
 {
     "accessToken":"",
     "port":null,
-    "url":"http://smartcityeventapi.azurewebsites.net",
+    "url":"http://eventapi-smartcity.azurewebsites.net/",
     "resource":"/api/events"
     
 }
